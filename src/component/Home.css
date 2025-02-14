@@ -1,0 +1,71 @@
+.home-container {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #00f2fe;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #4facfe;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .city-input {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .search-button {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .city-input,
+  .search-button {
+    max-width: 90%;
+  }
+}
