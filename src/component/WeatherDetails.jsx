@@ -21,6 +21,11 @@ const WeatherDetails = () => {
   if (!weather) return <h2 className="error">Error loading data</h2>;
 
   const dailyForecast = weather.list.filter((_, index) => index % 8 === 0);
+  const timestamp = weather.list[0].dt * 1000;
+  const timezoneOffset = weather.city.timezone * 1000; // Convert to milliseconds
+  const localDate = new Date(timestamp + timezoneOffset);
+  const formattedDate = localDate.toLocaleDateString();
+  const formattedTime = localDate.toLocaleTimeString();
 
   return (
     <div className="weather-container">
@@ -29,6 +34,13 @@ const WeatherDetails = () => {
         <h1 className="temperature">{Math.round(weather.list[0].main.temp - 273.15)}°</h1>
         <h2 className="city-name">{weather.city.name}</h2>
         <p className="weather-description">{weather.list[0].weather[0].description}</p>
+
+        <p className="weather-time">
+          <strong>Data:</strong> {formattedDate}
+        </p>
+        <p className="weather-time">
+          <strong>Ora locale:</strong> {formattedTime}
+        </p>
 
         <div className="weather-details">
           <p>
@@ -46,7 +58,7 @@ const WeatherDetails = () => {
         </div>
 
         <div className="daily-forecast">
-          <h3>5-Day Forecast</h3>
+          <h3>PROSSIMI GIORNI</h3>
           <div className="forecast-cards">
             {dailyForecast.map((forecast, index) => {
               const date = new Date(forecast.dt * 1000);

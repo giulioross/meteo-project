@@ -20,7 +20,7 @@ const Home = () => {
         <Col xs={12} md={6} lg={4} className="text-center">
           <h1 className="title">Weather App 🌤</h1>
           <Form onSubmit={handleSearch} className="search-form">
-            <Form.Control type="text" placeholder="Enter city..." value={city} onChange={(e) => setCity(e.target.value)} className="city-input" />
+            <Form.Control type="text" placeholder="Enter city..." value={city} onChange={(e) => setCity(e.target.value)} className="città-input" />
             <Button type="submit" variant="primary" className="search-button">
               Search
             </Button>
